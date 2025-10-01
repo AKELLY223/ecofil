@@ -8,6 +8,14 @@ import aceaC3Pdf from "../certif/acea-c3.pdf";
 import oemApprovalsPdf from "../certif/oem-approvals.pdf";
 import ecologiqueEuropenPdf from "../certif/ecologique-europeen.pdf";
 
+// Import des images des premières pages des certificats
+import iso9001Img from "../certif/images/iso-9001-preview.jpg";
+import iso14001Img from "../certif/images/iso-14001-preview.jpg";
+import apiSpImg from "../certif/images/api-sp-preview.jpg";
+import aceaC3Img from "../certif/images/acea-c3-preview.jpg";
+import oemApprovalsImg from "../certif/images/oem-approvals-preview.jpg";
+import ecologiqueEuropenImg from "../certif/images/ecologique-europeen-preview.jpg";
+
 const Certifications = () => {
   const certifications = [
     {
@@ -15,36 +23,42 @@ const Certifications = () => {
       title: "ISO 9001:2015",
       description: "Système de management de la qualité",
       pdf: iso9001Pdf,
+      image: iso9001Img,
     },
     {
       id: 2,
       title: "ISO 14001:2015",
       description: "Système de management environnemental",
       pdf: iso14001Pdf,
+      image: iso14001Img,
     },
     {
       id: 3,
       title: "API SP",
       description: "Certification API pour huiles moteur",
       pdf: apiSpPdf,
+      image: apiSpImg,
     },
     {
       id: 4,
       title: "ACEA C3",
       description: "Norme européenne pour huiles moteur",
       pdf: aceaC3Pdf,
+      image: aceaC3Img,
     },
     {
       id: 5,
       title: "Approbations OEM",
       description: "Certifications des constructeurs",
       pdf: oemApprovalsPdf,
+      image: oemApprovalsImg,
     },
     {
       id: 6,
       title: "Écologique Européen",
       description: "Certification environnementale européenne",
       pdf: ecologiqueEuropenPdf,
+      image: ecologiqueEuropenImg,
     },
   ];
 
@@ -71,43 +85,66 @@ const Certifications = () => {
           {certifications.map((certification) => (
             <div
               key={certification.id}
-              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer border border-gray-200"
-              onClick={() => handlePdfClick(certification.pdf)}
+              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200 flex flex-col"
             >
-              <div className="p-6 flex flex-col h-full">
-                {/* PDF Icon */}
-                <div className="flex justify-center mb-4">
-                  <div className="bg-red-100 p-4 rounded-full">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-12 w-12 text-red-600"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                      />
-                    </svg>
-                  </div>
+              {/* Preview Image - Prend toute la hauteur disponible */}
+              <div
+                className="flex-grow rounded-t-xl overflow-hidden cursor-pointer bg-gray-100 flex items-center justify-center min-h-[60vh]"
+                onClick={() => handlePdfClick(certification.pdf)}
+              >
+                <img
+                  src={certification.image}
+                  alt={`Première page du certificat ${certification.title}`}
+                  className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    e.target.nextSibling.style.display = "flex";
+                  }}
+                />
+                {/* Fallback si l'image ne charge pas */}
+                <div
+                  className="hidden flex-col items-center justify-center text-gray-400 p-4 min-h-[60vh] w-full"
+                  style={{ display: "none" }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-24 w-24 mb-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                  <p className="text-center text-lg font-medium">
+                    Aperçu non disponible
+                  </p>
+                  <p className="text-center text-sm mt-2">
+                    Cliquez pour voir le PDF complet
+                  </p>
                 </div>
+              </div>
 
+              {/* Content Section */}
+              <div className="p-6 flex flex-col">
                 {/* Content */}
-                <div className="text-center flex-grow">
+                <div className="text-center flex-grow mb-4">
                   <h3 className="text-xl font-bold text-gray-800 mb-2">
                     {certification.title}
                   </h3>
-                  <p className="text-gray-600 mb-4">
-                    {certification.description}
-                  </p>
+                  <p className="text-gray-600">{certification.description}</p>
                 </div>
 
                 {/* Button */}
-                <div className="mt-auto pt-4">
-                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center space-x-2">
+                <div className="mt-auto">
+                  <button
+                    onClick={() => handlePdfClick(certification.pdf)}
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center space-x-2"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5"
@@ -119,16 +156,10 @@ const Certifications = () => {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={2}
-                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                       />
                     </svg>
-                    <span>Voir le certificat</span>
+                    <span>Voir le document complet</span>
                   </button>
                 </div>
               </div>
@@ -144,7 +175,8 @@ const Certifications = () => {
           <p className="text-gray-600 max-w-2xl mx-auto">
             Toutes nos certifications sont régulièrement auditées et mises à
             jour pour garantir le plus haut niveau de qualité et de conformité
-            aux normes internationales les plus strictes.
+            aux normes internationales les plus strictes. Cliquez sur les
+            aperçus pour consulter les documents complets.
           </p>
         </div>
       </div>
