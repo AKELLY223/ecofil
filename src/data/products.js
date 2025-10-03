@@ -3,8 +3,20 @@ import filtreCartouche from "../assets/imgs/filtre_cartouche.jpg";
 import corpsFiltrant from "../assets/imgs/corps filtrant.jpg";
 import equipementFiltration from "../assets/imgs/equipement.jpg";
 import filtrationBypass from "../assets/imgs/filtration_by_pass.jpg";
+import neuronBlanc from "../assets/imgs/neuronBlanc.jpg";
+import importance from "../assets/imgs/importance.jpg";
 
 const products = [
+  {
+    id: 6,
+    title: "Filtration à membrane",
+    description: `
+    Les systèmes de filtration à membrane ECOFIL® sont conçus pour offrir une protection maximale contre les contaminants dans les huiles et fluides industriels. Grâce à leur conception modulaire, ils peuvent être facilement intégrés dans les installations existantes.
+    `,
+    image: importance,
+    videoId: null,
+    category: "filtres",
+  },
   {
     id: 1,
     title: "Cartouches filtrantes",
@@ -20,8 +32,9 @@ La conception spéciale des cartouches filtrantes assure une filtration extrême
 
     image: filtreCartouche,
     videoId: "M68MInDxtBA",
-    category: "oils",
+    category: "filters",
   },
+
   {
     id: 2,
     title: "Corps filtrants ECOFIL",
@@ -30,7 +43,7 @@ La conception spéciale des cartouches filtrantes assure une filtration extrême
     `,
     image: corpsFiltrant,
     videoId: "k7a52ZaPHbo",
-    category: "oils",
+    category: "filters",
   },
   {
     id: 3,
@@ -51,6 +64,16 @@ La conception spéciale des cartouches filtrantes assure une filtration extrême
 Les huiles et fluides industriels sont essentiels à de nombreux processus de fabrication et d'exploitation. Leur propreté et la qualité de leur traitement sont des facteurs clés qui influencent la fiabilité et la durée de vie des équipements industriels. L'une des solutions efficaces pour améliorer la qualité des huiles et fluides industriels est d'utiliser les technologies de filtration en dérivation ECOFIL® (by-pass, connexion hors ligne) pour leur traitement et leur filtration.
 `,
     image: filtrationBypass,
+    videoId: null,
+    category: "oils",
+  },
+  {
+    id: 5,
+    title: "Filtration à cartouche",
+    description: `
+    Les systèmes de filtration à cartouche ECOFIL® sont conçus pour offrir une protection maximale contre les contaminants dans les huiles et fluides industriels. Grâce à leur conception modulaire, ils peuvent être facilement intégrés dans les installations existantes.
+    `,
+    image: neuronBlanc,
     videoId: null,
     category: "filtres",
   },

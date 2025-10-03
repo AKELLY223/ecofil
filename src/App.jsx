@@ -7,7 +7,7 @@ import About from "./pages/About";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Services from "./pages/Services";
-import Applications from "./pages/Applications";
+import Applications from "./certif/images/Applications";
 import Certifications from "./pages/Certifications";
 import Contact from "./pages/Contact";
 

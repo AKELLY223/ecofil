@@ -1,64 +1,36 @@
 import React from "react";
 
 // Import your PDF files here
-import iso9001Pdf from "../certif/iso-9001-2015.pdf";
-import iso14001Pdf from "../certif/iso-14001-2015.pdf";
-import apiSpPdf from "../certif/api-sp.pdf";
-import aceaC3Pdf from "../certif/acea-c3.pdf";
-import oemApprovalsPdf from "../certif/oem-approvals.pdf";
-import ecologiqueEuropenPdf from "../certif/ecologique-europeen.pdf";
+import Amiga2021 from "../certif/Amiga2021.pdf";
+import AMIGADooWelding from "../certif/AMIGADooWelding.pdf";
+import CertificatOfConformitzTUV from "../certif/CertificatOfConformitzTUV.pdf";
 
-// Import des images des premières pages des certificats
-import iso9001Img from "../certif/images/iso-9001-preview.jpg";
-import iso14001Img from "../certif/images/iso-14001-preview.jpg";
-import apiSpImg from "../certif/images/api-sp-preview.jpg";
-import aceaC3Img from "../certif/images/acea-c3-preview.jpg";
-import oemApprovalsImg from "../certif/images/oem-approvals-preview.jpg";
-import ecologiqueEuropenImg from "../certif/images/ecologique-europeen-preview.jpg";
-
+// Import des images des premières pages   des certificats
+import Amiga2021img from "../certif/images/Amiga2021.jpg";
+import AMIGADooWeldingimg from "../certif/images/AMIGADooWelding.jpg";
+import CertificatOfConformitzTUVimg from "../certif/images/CertificatOfConformitzTUV.jpg";
 const Certifications = () => {
   const certifications = [
     {
       id: 1,
       title: "ISO 9001:2015",
       description: "Système de management de la qualité",
-      pdf: iso9001Pdf,
-      image: iso9001Img,
+      pdf: Amiga2021,
+      image: Amiga2021img,
     },
     {
       id: 2,
       title: "ISO 14001:2015",
       description: "Système de management environnemental",
-      pdf: iso14001Pdf,
-      image: iso14001Img,
+      pdf: AMIGADooWelding,
+      image: AMIGADooWeldingimg,
     },
     {
       id: 3,
       title: "API SP",
       description: "Certification API pour huiles moteur",
-      pdf: apiSpPdf,
-      image: apiSpImg,
-    },
-    {
-      id: 4,
-      title: "ACEA C3",
-      description: "Norme européenne pour huiles moteur",
-      pdf: aceaC3Pdf,
-      image: aceaC3Img,
-    },
-    {
-      id: 5,
-      title: "Approbations OEM",
-      description: "Certifications des constructeurs",
-      pdf: oemApprovalsPdf,
-      image: oemApprovalsImg,
-    },
-    {
-      id: 6,
-      title: "Écologique Européen",
-      description: "Certification environnementale européenne",
-      pdf: ecologiqueEuropenPdf,
-      image: ecologiqueEuropenImg,
+      pdf: CertificatOfConformitzTUV,
+      image: CertificatOfConformitzTUVimg,
     },
   ];
 

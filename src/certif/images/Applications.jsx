@@ -1,4 +1,9 @@
 import React from "react";
+import bus from "../images/bus.jpg";
+import busGars from "../images/busGars.jpg";
+import bus2 from "../images/bus2.jpg";
+import gars from "../images/gars.jpg";
+import bigBus from "../images/bigBus.jpg";
 
 const Applications = () => {
   const applicationCategories = [
@@ -6,8 +11,7 @@ const Applications = () => {
       title: "Automobiles particulières",
       description:
         "Nos huiles et filtres sont spécialement conçus pour les véhicules particuliers, offrant une protection optimale et des performances accrues.",
-      image:
-        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
+      image: bus,
       features: [
         "Moteurs essence et diesel",
         "Transmissions automatiques et manuelles",
@@ -19,8 +23,7 @@ const Applications = () => {
       title: "Poids lourds et transport",
       description:
         "Des solutions robustes pour les flottes de camions et véhicules commerciaux, garantissant fiabilité et longévité.",
-      image:
-        "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
+      image: busGars,
       features: [
         "Moteurs diesel haute performance",
         "Systèmes de filtration avancés",
@@ -32,8 +35,7 @@ const Applications = () => {
       title: "Véhicules agricoles",
       description:
         "Des produits adaptés aux conditions extrêmes rencontrées dans le secteur agricole, pour une protection maximale.",
-      image:
-        "https://images.unsplash.com/photo-1585011659439-a853a2fda504?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
+      image: bus2,
       features: [
         "Résistance aux charges lourdes",
         "Protection contre l'usure",
@@ -45,8 +47,7 @@ const Applications = () => {
       title: "Engins de chantier",
       description:
         "Des lubrifiants et filtres haute performance pour les engins de construction et travaux publics.",
-      image:
-        "https://images.unsplash.com/photo-1471289549423-04adaecfa1f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
+      image: gars,
       features: [
         "Protection contre la contamination",
         "Stabilité à haute température",
@@ -58,26 +59,12 @@ const Applications = () => {
       title: "Marine et navigation",
       description:
         "Solutions spécialisées pour les moteurs marins, offrant une protection contre la corrosion et les environnements salins.",
-      image:
-        "https://images.unsplash.com/photo-1511314162306-6a9d6e476cb8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
+      image: bigBus,
       features: [
         "Résistance à l'eau salée",
         "Protection anticorrosion",
         "Lubrification des systèmes marins",
         "Compatibilité avec les diesel marins",
-      ],
-    },
-    {
-      title: "Motos et véhicules récréatifs",
-      description:
-        "Produits haute performance pour les motos, scooters et autres véhicules de loisirs.",
-      image:
-        "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
-      features: [
-        "Huiles moteur 4-temps",
-        "Transmissions moto",
-        "Systèmes de refroidissement",
-        "Protection des moteurs haute performance",
       ],
     },
   ];
@@ -101,10 +88,11 @@ const Applications = () => {
             Des solutions pour tous les secteurs
           </h2>
           <p className="text-gray-600">
-            Chez AutoLub, nous développons des huiles moteur et des systèmes de
-            filtration adaptés à une large gamme d'applications. Que vous soyez
-            un particulier, un professionnel du transport, de l'agriculture ou
-            de la construction, nous avons les produits qu'il vous faut.
+            Chez Ecofil_Mali, nous développons des huiles moteur et des systèmes
+            de filtration adaptés à une large gamme d'applications. Que vous
+            soyez un particulier, un professionnel du transport, de
+            l'agriculture ou de la construction, nous avons les produits qu'il
+            vous faut.
           </p>
         </div>
 

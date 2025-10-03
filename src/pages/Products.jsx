@@ -22,7 +22,6 @@ const Products = () => {
     { id: "all", name: "Tous les produits" },
     { id: "oils", name: "Huiles moteur" },
     { id: "filters", name: "Filtres" },
-    { id: "parts", name: "Pièces détachées" },
   ];
 
   const filteredProducts =
